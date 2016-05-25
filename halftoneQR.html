@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Halftone QR Code Generator</title>
+<script src="jquery-2.1.1.js"></script>
+  <script src='qrcode.js'></script>
+  <script src='halftoneqr.js'></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Halftone QR Code Generator</h1>
+<h2>Drop an image into your browser, then click generate.</h2>
+QR content:<br />
+<textarea id="input" cols="50" rows="5">Kitty!</textarea><br />
+Redundancy (error correction level):
+<select id="error_level">
+    <option value="L">Low (7%)</option>
+    <option value="M">Medium (15%)</option>
+    <option value="Q">Quartile (25%)</option>
+    <option value="H" selected>High (30%)</option>
+</select><br />
+QR size:
+<select id="size">
+    <option value="0">Auto</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6" selected>6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select> (6 gives the largest blank square area)<br />
+Background Type:
+<select id="background">
+    <option value="image" selected>Image</option>
+    <option value="noise">Noise</option>
+    <option value="trans">Transparent</option>
+</select><br />
+<input type="button" id="go" value="Generate" /><br />
+
+<canvas id="imageColour"></canvas>
+<canvas id="imagePixel"></canvas>
+<canvas id="imageThreshold"></canvas>
+<a id="download" href="about:blank" download="qr.png" target="_blank" title="Download QR Code"><canvas id="output"></canvas></a><br />
+<a href="http://lach.la">By Lachlan</a>
+<br /><br />
+Cat photo by Cayambe [<a href="http://creativecommons.org/licenses/by-sa/3.0">CC-BY-SA-3.0</a> or <a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>], <a href="http://commons.wikimedia.org/wiki/File%3ACat_close-up_2004_b.jpg">via Wikimedia Commons</a>
+
+<div id="overlay">Drop image</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    position: relative;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+}
+
+body.hover #overlay {
+    display: block;
+}
+
+canvas {
+    margin: 5px;
+    box-shadow: 0 0 5px black;
+}
+
+/* Hidden for now */
+#imagePixel {
+    display: none;
+}
+
+#output {
+    background-color: grey;
+}
